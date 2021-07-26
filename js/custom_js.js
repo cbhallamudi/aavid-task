@@ -32,8 +32,8 @@ function openTab(btnId, tabId) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById("middle-section").lastChild.style.display = "block";
-  document.getElementById("tab").lastChild.className += " active";
+  document.getElementById("btnId").style.display = "block";
+  document.getElementById("tabId").className += " active";
 } 
 
 function closeThisTab(btnTabId){

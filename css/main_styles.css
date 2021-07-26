@@ -265,12 +265,14 @@
     	vertical-align: middle;
     	/*padding: 0vh 0px;*/
     	background-color: #222;	
+       overflow-x: auto;
+      /*overflow-y: hidden;*/
     }
 
      /* Style the tab */
     #tab {
       height: 100%;
-      overflow: hidden;
+
       /*border: 1px solid #ccc;*/
       background-color: rgb(34, 34, 34);
       float: left;
