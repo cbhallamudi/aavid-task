@@ -338,6 +338,7 @@
 
     /* Style the tab content */
     .tabcontent {
+      position: relative;
     	display: none;
     	padding: 5px 10px;
     	/* border: 1px solid #ccc; */
@@ -350,9 +351,16 @@
     	display: block;
     }
 
-    .tab-close{
-      margin-left: 5px;
-      color: rgba(255, 0, 0, 0.65);
-      font-size: 1rem;
+    .tab-content-close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: transparent;
+    }
+
+    .tab-close {
+      /* margin-left: 5px; */
+      color: rgb(2, 155, 247);
+      font-size: 1.5rem;
       font-weight: bold;
     }
