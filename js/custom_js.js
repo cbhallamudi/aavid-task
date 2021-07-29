@@ -5,7 +5,7 @@ function addNewTab(){
   // console.log(_tabLength);
   // _tabLength = 1;
   document.getElementById('tab').innerHTML += '<button class="tablinks" id="btnId'+_tabLength+'" onclick="openTab(this.id, \'tab'+_tabLength+'\')">Tab'+(_tabLength+1)+'</button>';
-  document.getElementById('middle-section').innerHTML += '<div id="tab'+_tabLength+'" class="tabcontent"><p>Tab number'+(_tabLength+1)+' Add Widgets here.</p><button class="tab-content-close-btn" onclick="closeThisTab('+_tabLength+')"><strong class="tab-close">&times;</strong></button></div>';
+  document.getElementById('middle-section').innerHTML += '<div id="tab'+_tabLength+'" class="tabcontent"><p>New Tab, Add Widgets here.</p><button class="tab-content-close-btn" onclick="closeThisTab('+_tabLength+')"><strong class="tab-close">&times;</strong></button></div>';
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -189,5 +189,9 @@ function initResizeElement() {
     document.documentElement.removeEventListener("mousemove", doDrag, false);
     document.documentElement.removeEventListener("mouseup", stopDrag, false);
   }
+}
+
+function closeWidget(widgetId){
+    document.getElementById(widgetId).remove();
 }
 
