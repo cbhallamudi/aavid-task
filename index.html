@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Stocks</title>
@@ -9,49 +7,49 @@
 </head>
 <body>
 	<header>
-		<h1>stocks</h1>
-		<div class = "icons">
-			<div class = "notification">
-	  			<a href = "#">
-	  				<div class = "notBtn" href = "#">
-	    				<div class = "number">3</div>
+		<h1 class="header-h1">stocks</h1>
+		<div class="icons">
+			<div class="notification">
+	  			<a href="#">
+	  				</a><div class="notBtn" href="#"><a href="#">
+	    				<div class="number">3</div>
 	    				<img class="fas" src="./images/36238.png" alt="">
-	      				<div class = "box">
-	        				<div class = "display">
-	          					<div class = "nothing"> 
+	      				</a><div class="box"><a href="#">
+	        				</a><div class="display"><a href="#">
+	          					<div class="nothing"> 
 	            					<i class="fas fa-child stick"></i> 
-	            					<div class = "cent">No Notifications</div>
+	            					<div class="cent">No Notifications</div>
 	          					</div>
-	          					<div class = "cont">
-	             					<div class = "sec new">
-	               						<a href = "#">
-	               							<div class = "div_content_notification">
-	                							<p class = "prof-main-txt"><img class = "" src = "./images/1633249.png">This notification is marked unread</p>
-	                							<p class = "prof-sub-txt">11/7/2021 - 2:30 pm</p>
+	          					</a><div class="cont"><a href="#">
+	             					</a><div class="sec new"><a href="#">
+	               						</a><a href="#">
+	               							<div class="div_content_notification">
+	                							<p class="prof-main-txt"><img class="" src="./images/1633249.png">This notification is marked unread</p>
+	                							<p class="prof-sub-txt">11/7/2021 - 2:30 pm</p>
 	                						</div>
 	               						</a>
 	            					</div>
-	            					<div class = "sec new">
-	               						<a href = "#">
-	               							<div class = "div_content_notification">
-	                							<p class = "prof-main-txt"><img class = "" src = "./images/1633249.png">This notification is marked unread</p>
-	                							<p class = "prof-sub-txt">12/7/2021 - 2:00 am</p>
+	            					<div class="sec new">
+	               						<a href="#">
+	               							<div class="div_content_notification">
+	                							<p class="prof-main-txt"><img class="" src="./images/1633249.png">This notification is marked unread</p>
+	                							<p class="prof-sub-txt">12/7/2021 - 2:00 am</p>
 	                						</div>
 	               						</a>
 	            					</div>
-	            					<div class = "sec">
-	               						<a href = "#">
-	               							<div class = "div_content_notification">
-	                							<p class = "prof-main-txt"><img class = "" src = "./images/1633249.png">This notification is marked read</p>
-	                							<p class = "prof-sub-txt">24/7/2021 - 6:30 pm</p>
+	            					<div class="sec">
+	               						<a href="#">
+	               							<div class="div_content_notification">
+	                							<p class="prof-main-txt"><img class="" src="./images/1633249.png">This notification is marked read</p>
+	                							<p class="prof-sub-txt">24/7/2021 - 6:30 pm</p>
 	                						</div>
 	               						</a>
 	            					</div>
-	            					<div class = "sec new">
-	               						<a href = "#">
-	               							<div class = "div_content_notification">
-	                							<p class = "prof-main-txt"><img class = "" src = "./images/1633249.png">This notification is marked unread</p>
-	                							<p class = "prof-sub-txt">25/7/2021 - 7:30 am</p>
+	            					<div class="sec new">
+	               						<a href="#">
+	               							<div class="div_content_notification">
+	                							<p class="prof-main-txt"><img class="" src="./images/1633249.png">This notification is marked unread</p>
+	                							<p class="prof-sub-txt">25/7/2021 - 7:30 am</p>
 	                						</div>
 	               						</a>
 	            					</div>
@@ -60,10 +58,10 @@
 	        				</div>
 	     				</div>
 	  				</div>
-	    		</a>
+	    		
 			</div>
-			<a href = "#"><img class="fas" src="./images/1633249.png" alt=""></a>
-			<a href = "#" onclick="addWidgetDropdown()" class="add-widget-dropdown" id="dropbtn">
+			<a href="#" onclick="openProfileDiv()"><img class="fas" src="./images/1633249.png" alt=""></a>
+			<a href="#" onclick="addWidgetDropdown()" class="add-widget-dropdown" id="dropbtn">
 				<img class="fas" src="./images/1970474.png" alt="">
 			</a>
 				<div class="add-widget-dropdown-content" id="myDropdown">
@@ -75,29 +73,53 @@
 		</div>
 	</header>
 	<section id="middle-section">
+		<div id="profile">
+		  <button onclick="closeProfileDiv()">&times;</button>
+		  <div id="profile-content">
+			  <div class="card">
+			    <img src="./images/201016.jpeg" alt="John">
+			    <h1 class="profile-card-name">Sriviswanath</h1>
+			    <p class="profile-card-title">CEO &amp; Founder, RCBS</p>
+			    <address>
+			    	<p>42-168</p>
+			    	<p>Agraharam Street</p>
+			    	<p>Visakhapatnam.</p>
+			    	<p>530001</p>
+			    </address>
+			  </div>
+			  <div class="card-footer">
+			  	<a href="#" title="facebook"><img src="./images/fb.png" alt=""></a>
+			  	<a href="#" title="linkedin"><img src="./images/li.png" alt=""></a>
+			  	<a href="#" title="youtube"><img src="./images/yt.png" alt=""></a>
+			  </div>
+
+		  </div>
+		</div>
+
+
 		<!-- Tab content -->
 		<div id="tab0" class="tabcontent currentTab">
-		  <div class="popup quote-widget" id="main-tab-quote-widget">
-		    <div class="popup-header" onmousedown="initDragElement(this)">Draggable and Resizable Widget: Quote</div>
+		  <!-- <div class="popup quote-widget" id="main-tab-quote-widget">
+		    <div class="popup-header" onmousedown="initDragElement()">Quote</div>
 		    <p>A stock quote is the price of a stock as quoted on an exchange. A basic quote for a specific stock provides information, such as its bid and ask price, last traded price, and volume traded.</p>
-		    <div class="popup-footer"><button onclick="closeWidget('main-tab-quote-widget')">Close Widget &times;</button></div>
+		    <div class="popup-footer"><button onclick="closeWidget('main-tab-quote-widget')">Close Widget ×</button></div>
 		  </div>
 
 		  <div class="popup order-widget" id="main-tab-order-widget">
-		    <div class="popup-header noselect" onmousedown="initDragElement(this)">Draggable and Resizable Widget: Order</div>
+		    <div class="popup-header noselect" onmousedown="initDragElement()">Order</div>
 		    <p>An order is an instruction that an investor gives to buy or sell stocks on a trading platform or to a stock broker.</p>
-		    <div class="popup-footer"><button onclick="closeWidget('main-tab-order-widget')">Close Widget &times;</button></div>
+		    <div class="popup-footer"><button onclick="closeWidget('main-tab-order-widget')">Close Widget ×</button></div>
 		  </div>
 		  <div class="popup chart-widget" id="main-tab-chart-widget">
-		    <div class="popup-header noselect" onmousedown="initDragElement(this)">Draggable and Resizable Widget: Chart</div>
+		    <div class="popup-header noselect" onmousedown="initDragElement()">Chart</div>
 		    <p>A graphical representation of price and volume movements of a stock over a certain period of time.</p>
-		    <div class="popup-footer"><button onclick="closeWidget('main-tab-chart-widget')">Close Widget &times;</button></div>
+		    <div class="popup-footer"><button onclick="closeWidget('main-tab-chart-widget')">Close Widget ×</button></div>
 		  </div>
 		  <div class="popup position-widget" id="main-tab-position-widget">
-		    <div class="popup-header noselect" onmousedown="initDragElement(this)">Draggable and Resizable Widget: Position</div>
+		    <div class="popup-header noselect" onmousedown="initDragElement()">Position</div>
 		    <p>A position is the amount of a security, asset, or property that is owned (or sold short) by some individual or other entity.</p>
-		    <div class="popup-footer"><button onclick="closeWidget('main-tab-position-widget')">Close Widget &times;</button></div>
-		  </div>
+		    <div class="popup-footer"><button onclick="closeWidget('main-tab-position-widget')">Close Widget ×</button></div>
+		  </div> -->
 		</div>
 		
 
@@ -114,9 +136,4 @@
 
 	</footer>
 
-	<script type="text/javascript">
-		
-
-	</script>
-</body>
-</html>
+</body></html>

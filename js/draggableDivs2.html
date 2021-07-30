@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<style>
+.item{
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  background-color: #f30;
+  overflow: auto;
+}
+</style>
+<body>
+
+  <div class="item">
+          <div class="resizer tl">
+            <div class="mydivheader">Draggable Widget: Quote</div>
+            <p>A stock quote is the price of a stock as quoted on an exchange. A basic quote for a specific stock provides information, such as its bid and ask price, last traded price, and volume traded.</p>
+          </div>
+          <div class="resizer tr">
+            <div class="mydivheader">Draggable Widget: Order</div>
+            <p>An order is an instruction that an investor gives to buy or sell stocks on a trading platform or to a stock broker.</p>
+          </div>
+          <div class="resizer br">
+            <div class="mydivheader">Draggable Widget: Chart</div>
+            <p>A graphical representation of price and volume movements of a stock over a certain period of time.</p>
+          </div>
+          <div class="resizer bl">
+            <div class="mydivheader">Draggable Widget: Position</div>
+            <p>A position is the amount of a security, asset, or property that is owned (or sold short) by some individual or other entity.</p>
+          </div>
+        </div>
+<script>
+const el = document.querySelector(".item");
+
+el.addEventListener('mousedown',mousedown);
+
+function mousedown(e) {
+  
+  window.addEventListener('mousemove',mousemove);
+  window.addEventListener('mouseup',mouseup);
+  
+  let prevX = e.clientX;
+  let prevY = e.clientY;
+  
+  function mousemove(e) {
+    let newX = prevX - e.clientX;
+    let newY = prevY - e.clientY;
+
+    const rect = el.getBoundingClientRect();
+
+    el.style.left = rect.left - newX + "px";
+    el.style.top = rect.top - newY + "px";
+
+    prevX = e.clientX;
+    prevY = e.clientY;
+  }
+
+  function mouseup() {
+    window.removeEventListener('mousemove',mousemove);
+    window.removeEventListener('mouseup',mouseup);
+  }
+
+}
+</script>
+
+
+</body>
+</html>

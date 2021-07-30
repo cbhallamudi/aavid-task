@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<style>
+.mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  width: 25%;
+  height: 200px;
+  resize: both;
+  overflow: auto;
+}
+
+.mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+</style>
+<body>
+
+<div class="mydiv" id="div1">
+  <div class="mydivheader">Draggable Widget: Quote</div>
+  <p>A stock quote is the price of a stock as quoted on an exchange. A basic quote for a specific stock provides information, such as its bid and ask price, last traded price, and volume traded.</p>
+</div>
+
+<div class="mydiv" id="div2">
+  <div class="mydivheader">Draggable Widget: Order</div>
+  <p>An order is an instruction that an investor gives to buy or sell stocks on a trading platform or to a stock broker.</p>
+</div>
+
+<div class="mydiv" id="div3">
+  <div class="mydivheader">Draggable Widget: Chart</div>
+  <p>A graphical representation of price and volume movements of a stock over a certain period of time.</p>
+</div>
+
+<div class="mydiv" id="div4">
+  <div class="mydivheader">Draggable Widget: Position</div>
+  <p>A position is the amount of a security, asset, or property that is owned (or sold short) by some individual or other entity.</p>
+</div>
+<script>
+//Make the DIV element draggagle:
+var i;
+var _movableDivs = document.getElementsByClassName("mydiv");
+for(i=0;i<_movableDivs.length;i++){
+	dragElement(_movableDivs[i]);
+}
+//dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+
+</body>
+</html>
