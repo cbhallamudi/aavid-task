@@ -375,9 +375,6 @@ a {
   display: inline-block;
 }
 
-
-/* Dropdown Content (Hidden by Default) */
-
 .add-widget-dropdown-content {
   display: none;
   position: absolute;
@@ -593,7 +590,8 @@ footer {
 
 #tab {
   height: 100%;
-  overflow-x: auto;
+  
+  -moz-max-width: 95%;
   max-width: 95%;
   /*border: 1px solid #ccc;*/
   background-color: rgb(34, 34, 34);
@@ -616,7 +614,7 @@ footer {
   float: left;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 13px 16px;
   transition: 0.3s;
   border-style: solid solid none none;
   border-color: #aaa5;
