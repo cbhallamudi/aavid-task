@@ -494,10 +494,6 @@ a {
   overflow: auto;
 }
 
-/*Drgable */
-
-
-
 .quote-widget {
   top: 5px;
   left: 5px;
@@ -519,35 +515,35 @@ a {
 }
 
 .popup-header {
-  padding: 10px;
+  /*padding: 10px;*/
   height: 17%;
   cursor: move;
   z-index: 10;
   background-color: #131415;
   color: #fff;
+  text-transform: capitalize;
 }
 
 .popup>p {
-  height: 67%;
+  height: 83%;
   overflow: auto;
 }
 
-.popup-footer {
-  padding: 10px;
-  cursor: move;
-  z-index: 10;
-  background-color: #131415;
-  color: #fff;
-  height: 16%;
+.popup-header>h4{
+  display: inline-block;
+  text-align: left;
+  width: 65%;
 }
 
-.popup-footer>button {
+.popup-header>button {
+  display: inline-block;
+  width: 20%;
   height: 100%;
   font-size: 90%;
   background-color: transparent;
   color: ghostwhite;
+  text-align: right;
 }
-
 
 /*Resizeable*/
 

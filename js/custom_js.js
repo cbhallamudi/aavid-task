@@ -179,7 +179,7 @@ function addToCurrentTab(widgetClass) {
   for (i = 0; i < tabcontent.length; i++) {
     if(tabcontent[i].classList.contains("currentTab")){
       // console.log(tabcontent[i].getAttribute("id"));
-      tabcontent[i].innerHTML += '<div onmousedown="initDragElement()" class="popup '+widgetClass+'" id="'+tabcontent[i].getAttribute("id")+'-'+widgetClass+'"><div class="popup-header">'+widgetName+'</div><p>'+dummyContent+'</p><div class="popup-footer"><button onclick="closeWidget(\''+tabcontent[i].getAttribute("id")+'-'+widgetClass+'\')">Close Widget &times;</button></div></div>';
+      tabcontent[i].innerHTML += '<div onmousedown="initDragElement()" class="popup '+widgetClass+'" id="'+tabcontent[i].getAttribute("id")+'-'+widgetClass+'"><div class="popup-header"><h4>'+widgetName+'</h4><button onclick="closeWidget(\''+tabcontent[i].getAttribute("id")+'-'+widgetClass+'\')">×</button></div><p>'+dummyContent+'</p></div>';
     }
   }
   document.getElementById("myDropdown").classList.toggle("show");
@@ -192,3 +192,5 @@ function openProfileDiv() {
 function closeProfileDiv() {
   document.getElementById("profile").style.display = "none";
 }
+
+// <h4>Quote</h4> <button onclick="closeWidget('main-tab-quote-widget')">×</button>
