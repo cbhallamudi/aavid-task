@@ -1,46 +1,89 @@
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="./css/index2_styles.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Box</title>
+  <style type="text/css">/* The radio-container */
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-<header>
-<h1>stocks</h1>
-<div class = "icons">
-<!-- <a href = "#"><img class="fas" src="./images/36238.png" alt=""></a> -->
-<div class = "notification">
-  <a href = "#">
-  <div class = "notBtn" href = "#">
-    <!--Number supports double digets and automaticly hides itself when there is nothing between divs -->
-    <div class = "number">2</div>
-    <!-- <i class="fas fa-bell"></i> -->
-    <img class="fas" src="./images/36238.png" alt="">
-      <div class = "box">
-        <div class = "display">
-          <div class = "nothing"> 
-            <i class="fas fa-child stick"></i> 
-            <div class = "cent">Looks Like your all caught up!</div>
-          </div>
-          <div class = "cont"><!-- Fold this div and try deleting evrything inbetween -->
-             <div class = "sec new">
-               <a href = "https://codepen.io/Golez/">
-               <div class = "div_content_notification">
-               
-                <p class = "prof-main-txt"><img class = "" src = "https://c1.staticflickr.com/5/4007/4626436851_5629a97f30_b.jpg">James liked your post: "Pure css notification box"</p>
-                <p class = "prof-sub-txt">11/7 - 2:30 pm</p>
-                </div>
-               </a>
-            </div>
-         </div>
-        </div>
-     </div>
-  </div>
-    </a>
-</div>
-<a href = "#"><img class="fas" src="./images/1633249.png" alt=""></a>
-<a href = "#"><img class="fas" src="./images/1970474.png" alt=""></a>
-</div>
-</header>
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark::after {
+  top: 4.4px;
+  left: 4.4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}</style>
+</head>
+<body>
+  <label class="radio-container">One
+    <input type="radio" checked="checked" name="radio">
+    <span class="checkmark"></span>
+  </label>
+  <label class="radio-container">Two
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+  <label class="radio-container">Three
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+  <label class="radio-container">Four
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</body>
+</html>

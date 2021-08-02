@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+.clear-float{
+  clear:both;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -529,17 +533,24 @@ a {
 .popup-header>h4{
   display: inline-block;
   text-align: left;
-  width: 65%;
+  width: 80%;
 }
 
-.popup-header>button {
+.widget-close, .flip-back, .flip-front {
   display: inline-block;
-  width: 20%;
+  width: 1vw;
   height: 100%;
-  font-size: 90%;
+  font-size: 100%;
   background-color: transparent;
   color: ghostwhite;
   text-align: right;
+}
+
+.flip-back > img{
+  filter: invert(100%);
+  width: 10px;
+  height: auto;
+  margin-left: 10px;
 }
 
 /*Resizeable*/
@@ -660,11 +671,418 @@ footer {
   color: black;
 }
 
+.scene {
+  width: 100%;
+  height: 83%;
+  border: 1px solid #CCC;
+  /*margin: 40px 0;*/
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  margin:auto;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*line-height: 260px;*/
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  /*font-size: 40px;*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: #3A3A3C;
+  padding: 5px;
+}
+
+.card__face--back {
+  background: rgb(43, 116, 145);
+  transform: rotateY(180deg);
+}
+
+#order-box{
+  width: 100%;
+  min-height: 100px;
+  /*border:  1px solid red;*/
+  overflow: auto;
+}
+
+.order-box-header{
+  width: 100%;
+  height: 15%;
+  background-image: linear-gradient(rgba(26, 27, 28, 0.46) 15%, rgba(21, 90, 130, 0.78) 40%);
+  color:ghostwhite;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.buy-statement{
+  width: 50%;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  /*width: 60px;*/
+  height: 80%;
+  width: 5%;
+  margin-top: 0.2%;
+  float: right;
+  right: 3%;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/*.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}*/
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: -10px;
+  right: 13px;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 49px;
+}
+
+/*.slider::before {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 14px;
+  left: -11px;
+  bottom: 5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}*/
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 14px;
+  left: 5%;
+  bottom: 4.2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*Radio Button order*/
+
+.order-box-content {
+  height: 85%;
+  background-image: linear-gradient(rgba(21, 90, 130, 0.78) 85%,rgba(26, 27, 28, 0.46));
+}
+
+.left-radio-btn-container{
+  text-align: center;
+  padding-left: 15px;
+  padding-top: 5px;
+  width: 50%;
+  float: left;
+  height: 30%;
+}
+.right-radio-btn-container{
+  text-align: center;
+  /*padding-right: 1px;*/
+  padding-top: 5px;
+  width: 50%;
+  float: left;
+  height: 30%;
+}
+
+.radio-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark::after {
+  top: 4.4px;
+  left: 4.4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+.qptp{
+  height: 50%;
+}
+
+.formgroup{
+  width: 30%;
+  height: 60%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.formgroup label{
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.7rem;
+}
+
+.formgroup input[type=number] {
+  width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+}
+
+.buy-btn input[type="submit"]{
+  background: aquamarine;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 30%;
+}
+.buy-btn input[type="button"]{
+  background: #D6F3E9;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 30%;
+  color: #848383;
+}
+
+.back-face-table{
+  height: 100%;
+  overflow: auto;
+}
+.back-face-table table {
+  width: 100%;
+  background-image: linear-gradient(rgba(26, 27, 28, 0.46) 15%, rgba(21, 90, 130, 0.78) 40%);
+}
+
+.back-face-table table, .back-face-table table > tr,td{
+  border-top: 1px solid gold;
+  border-collapse: collapse;
+}
+
+.back-face-table table > caption {
+  color: ghostwhite;
+  font-family: initial;
+  border-bottom: 1px solid aquamarine;
+  width: 100%;
+  padding: 5px;
+}
+
+.back-face-table table th{
+  padding: 6px 0px;
+  width: 16%;
+  color: aquamarine;
+  font-size:  0.7rem;
+}
+.back-face-table table td{
+  padding: 5px 0px;
+  font-size:  0.7rem;
+  text-align: center;
+}
+
+.back-face-table table tbody>tr:nth-child(even){
+  color: rgba(255, 245, 245, 0.58);
+}
+
+.back-face-table table tbody>tr:nth-child(odd){
+  color: rgb(220, 212, 212);
+}
+
+
 /*Responsive*/
+
+
+@media screen and (min-width: 768px and max-width: 993px) {
+  .radio-container{
+    font-size: 12px;
+  }
+  .left-radio-btn-container{
+    width: 30%;
+  }
+  .right-radio-btn-container{
+    width: 65%;
+   }
+}
+
 
 @media screen and (max-width: 767px) {
   .popup {
     width: 90%;
     margin:  auto;
+  }
+  .switch{
+    right: 0%;
+  }
+  
+
+  .left-radio-btn-container{
+    width: 50%;
+    text-align: center;
+  }
+  .right-radio-btn-container{
+    width: 50%;
+   }
+}
+
+@media screen and (min-width: 638px and max-width: 767px) {
+  .buy-statement{
+    width: 50%;
+    font-size: 1rem;
+
+  }
+}
+
+@media screen and (max-width: 637px) {
+  .buy-statement{
+    width: 50%;
+    font-size: 1rem;
+
+  }
+  .switch{
+    right: 3%;
+  }
+
+  .slider{
+    width: 45px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .left-radio-btn-container,.right-radio-btn-container{
+    height: 30%;
+  }
+  
+}
+@media screen and (max-width: 569px) {
+  .left-radio-btn-container{
+    width: 45%;
+    padding-left: 5px;
+    font-size: 1rem;
+  }
+  .right-radio-btn-container{
+    width: 55%;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 367px) {
+  .switch{
+    right: 7%;
+  }
+
+  .buy-statement{
+    width: 50%;
+    font-size: 0.7rem;
+
   }
 }

@@ -179,7 +179,14 @@ function addToCurrentTab(widgetClass) {
   for (i = 0; i < tabcontent.length; i++) {
     if(tabcontent[i].classList.contains("currentTab")){
       // console.log(tabcontent[i].getAttribute("id"));
-      tabcontent[i].innerHTML += '<div onmousedown="initDragElement()" class="popup '+widgetClass+'" id="'+tabcontent[i].getAttribute("id")+'-'+widgetClass+'"><div class="popup-header"><h4>'+widgetName+'</h4><button onclick="closeWidget(\''+tabcontent[i].getAttribute("id")+'-'+widgetClass+'\')">×</button></div><p>'+dummyContent+'</p></div>';
+      if(widgetName == "order"){
+        tabcontent[i].innerHTML += '<div onmousedown="initDragElement()" class="popup '+widgetClass+'" id="'+tabcontent[i].getAttribute("id")+'-'+widgetClass+'"><div class="popup-header"><h4>'+widgetName+'</h4><button onclick="closeWidget(\''+tabcontent[i].getAttribute("id")+'-'+widgetClass+'\')" class="widget-close">×</button><button onclick="flipkart(\''+'flipCard-'+tabcontent[i].getAttribute("id")+'-'+widgetClass+'\')" class="flip-back" title="flip"><img src="./images/rotate.png" alt="Flip"></button></div> <div class="scene scene--card"><div class="card" id="'+'flipCard-'+tabcontent[i].getAttribute("id")+'-'+widgetClass+'">  <div class="card__face card__face--front"><div id="order-box"><div class="order-box-header"><span class="buy-statement">Buy RCBS &times; 1000 Qty on NSEIndia</span><label class="switch"><input type="checkbox" checked><span class="slider round"></span></label></div><div class="order-box-content"><div class="left-radio-btn-container"><label class="radio-container">MIS<input type="radio" checked="checked" name="left-group"><span class="checkmark"></span></label><label class="radio-container">NRML<input type="radio" name="left-group"><span class="checkmark"></span></label></div><div class="right-radio-btn-container"><label class="radio-container">MARKET<input type="radio" checked="checked" name="right-group"><span class="checkmark"></span></label><label class="radio-container">LIMIT<input type="radio" name="right-group"><span class="checkmark"></span></label></div><div class="clear-float"></div><div class="qptp"><form action=""><div class="inputs"><div class="formgroup"><label for="qty">Quantity</label><input type="number" name="qty" id="qty" placeholder="3000"></div><div class="formgroup"><label for="price">Price</label><input type="number" name="price" id="price" placeholder="1000"></div><div class="formgroup"><label for="tp">Trigger Price</label><input type="number" name="tp" id="tp" placeholder="1000"></div></div><div class="buy-btn"><input type="submit" value="BUY"></div></form></div>      </div></div>  </div>  <div class="card__face card__face--back"><div class="back-face-table"><table><caption>RCBS - Historical Trade Data</caption><thead><th>Date</th><th>Open</th><th>Close</th><th>High</th><th>Low</th><th>Volume</th></thead><tbody><tr><td>30-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr><tr><td>29-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr><tr><td>28-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr><tr><td>27-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr><tr><td>26-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr><tr><td>26-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr><tr><td>26-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr><tr><td>26-07-2021</td><td>&#8377; 3000</td><td>&#8377; 3000</td><td>&#8377; 2500</td><td>&#8377; 2000</td><td>3000</td></tr></tbody>      </table>    </div>  </div></div></div>';
+
+      }else{
+
+          tabcontent[i].innerHTML += '<div onmousedown="initDragElement()" class="popup '+widgetClass+'" id="'+tabcontent[i].getAttribute("id")+'-'+widgetClass+'"><div class="popup-header"><h4>'+widgetName+'</h4><button onclick="closeWidget(\''+tabcontent[i].getAttribute("id")+'-'+widgetClass+'\')">×</button></div><p>'+dummyContent+'</p></div>';
+      }
+
     }
   }
   document.getElementById("myDropdown").classList.toggle("show");
@@ -191,6 +198,11 @@ function openProfileDiv() {
 
 function closeProfileDiv() {
   document.getElementById("profile").style.display = "none";
+}
+
+function flipkart(elementId){
+  console.log(elementId);
+  document.getElementById(elementId).classList.toggle("is-flipped");
 }
 
 // <h4>Quote</h4> <button onclick="closeWidget('main-tab-quote-widget')">×</button>

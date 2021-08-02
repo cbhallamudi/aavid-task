@@ -98,19 +98,171 @@
 
 
 		<!-- Tab content -->
-		<div id="tab0" class="tabcontent currentTab"><!-- 
-		  <div class="popup quote-widget" id="main-tab-quote-widget">
+		<div id="tab0" class="tabcontent currentTab"> 
+		  <!--<div class="popup quote-widget" id="main-tab-quote-widget">
 		    <div class="popup-header" onmousedown="initDragElement()"><h4>Quote</h4> <button onclick="closeWidget('main-tab-quote-widget')">×</button></div>
 		    <p>A stock quote is the price of a stock as quoted on an exchange. A basic quote for a specific stock provides information, such as its bid and ask price, last traded price, and volume traded.</p>
 		   
-		  </div>
+		  </div> -->
 
 		  <div class="popup order-widget" id="main-tab-order-widget">
-		    <div class="popup-header noselect" onmousedown="initDragElement()"><h4>Order</h4> <button onclick="closeWidget('main-tab-order-widget')">×</button></div>
-		    <p>An order is an instruction that an investor gives to buy or sell stocks on a trading platform or to a stock broker.</p>
+		    <div class="popup-header noselect" onmousedown="initDragElement()">
+		    	<h4>Order</h4> 
+		    	<button onclick="closeWidget('main-tab-order-widget')" class="widget-close">×</button>
+		    	<button onclick="flipkart('flipCard')" class="flip-back" id="main-tab-order-widget-flip-btn" title="flip"><img src="./images/rotate.png" alt="Flip"></button>
+		    </div>
+		    
+			    <div class="scene scene--card">
+			      <div class="card" id="flipCard">
+
+			        <div class="card__face card__face--front">
+			        	<div id="order-box">
+			        	  <div class="order-box-header">
+			        	    <span class="buy-statement">Buy RCBS &times; 1000 Qty on NSEIndia</span>
+			        	    <label class="switch">
+			        	      <input type="checkbox" checked>
+			        	      <span class="slider round"></span>
+			        	    </label>
+			        	  </div>
+			        	  <div class="order-box-content">
+				        	  <div class="left-radio-btn-container">
+					        	  <label class="radio-container">MIS
+					        	    <input type="radio" checked="checked" name="left-group">
+					        	    <span class="checkmark"></span>
+					        	  </label>
+					        	  <label class="radio-container">NRML
+					        	    <input type="radio" name="left-group">
+					        	    <span class="checkmark"></span>
+					        	  </label>
+				        	  </div>
+				        	  <div class="right-radio-btn-container">
+					        	  <label class="radio-container">MARKET
+					        	    <input type="radio" checked="checked" name="right-group">
+					        	    <span class="checkmark"></span>
+					        	  </label>
+					        	  <label class="radio-container">LIMIT
+					        	    <input type="radio" name="right-group">
+					        	    <span class="checkmark"></span>
+					        	  </label>
+					        	  
+				        	  </div>
+				        	  <div class="clear-float"></div>
+				        	  <div class="qptp">
+				        	  	<form action="">
+				        	  		<div class="inputs">
+				        	  			
+					        	  		<div class="formgroup">
+					        	  			<label for="qty">Quantity</label>
+					        	  			<input type="number" name="qty" id="qty" placeholder="3000">
+					        	  		</div>	
+					        	  		<div class="formgroup">
+					        	  			<label for="price">Price</label>
+					        	  			<input type="number" name="price" id="price" placeholder="1000">
+					        	  		</div>	
+					        	  		<div class="formgroup">
+					        	  			<label for="tp">Trigger Price</label>
+					        	  			<input type="number" name="tp" id="tp" placeholder="1000">
+					        	  		</div>
+				        	  		</div>
+				        	  		<div class="buy-btn">
+				        	  			<input type="submit" value="BUY">
+				        	  			<!-- <input type="button" value="Cancel"> -->
+				        	  		</div>
+				        	  	</form>
+				        	  </div>
+				        	</div>	  
+			        	</div>
+
+			        </div>
+			        <div class="card__face card__face--back">
+			        	<div class="back-face-table">
+			        		<table>
+			        			<caption>RCBS - Historical Trade Data</caption>
+			        			<thead>
+			        				<th>Date</th>
+			        				<th>Open</th>
+			        				<th>Close</th>
+			        				<th>High</th>
+			        				<th>Low</th>
+			        				<th>Volume</th>
+			        			</thead>
+			        			<tbody>
+			        				<tr>
+			        					<td>30-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        				<tr>
+			        					<td>29-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        				<tr>
+			        					<td>28-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        				<tr>
+			        					<td>27-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        				<tr>
+			        					<td>26-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        				<tr>
+			        					<td>26-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        				<tr>
+			        					<td>26-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        				<tr>
+			        					<td>26-07-2021</td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (3000 - 2000 + 1)) + 2000);</script></td>
+			        					<td>&#8377; <script type="text/javascript">document.write(Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500);</script></td>
+			        					<td><script type="text/javascript">document.write(Math.floor(Math.random()*3000));</script></td>
+			        				</tr>
+			        			</tbody>
+
+			        		</table>
+			        	</div>
+			        </div>
+			      </div>
+			    </div>
+
+		    <!-- <p>An order is an instruction that an investor gives to buy or sell stocks on a trading platform or to a stock broker.</p> -->
 		   
 		  </div>
-		  <div class="popup chart-widget" id="main-tab-chart-widget">
+		<!-- <div class="popup chart-widget" id="main-tab-chart-widget">
 		    <div class="popup-header noselect" onmousedown="initDragElement()"><h4>Chart</h4> <button onclick="closeWidget('main-tab-chart-widget')">×</button></div>
 		    <p>A graphical representation of price and volume movements of a stock over a certain period of time.</p>
 		   
